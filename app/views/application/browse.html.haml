@@ -1,0 +1,7 @@
+%h1
+  = params[:level1] || "Root"
+%ul
+  - @files.each do |file|
+    %li
+      = link_to file, file_link(file)
+

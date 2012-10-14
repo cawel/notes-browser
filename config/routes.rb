@@ -48,7 +48,10 @@ NotesViewer::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'application#welcome'
+
+  match 'browser/:level1/:level2' => 'application#browse', :as => :browser
+  match 'browser/:level1' => 'application#browse', :as => :browser
 
   # See how all your routes lay out with "rake routes"
 
