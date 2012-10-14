@@ -50,8 +50,9 @@ NotesViewer::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'application#welcome'
 
-  match 'browser/:level1/:level2' => 'application#browse', :as => :browser
-  match 'browser/:level1' => 'application#browse', :as => :browser
+  match 'browser/:level1/:level2/:level3' => 'application#browse', :constraints => { :level3 => /[^\/]+/ }, :as => :browser
+  match 'browser/:level1/:level2'         => 'application#browse', :as => :browser
+  match 'browser/:level1'                 => 'application#browse', :as => :browser
 
   # See how all your routes lay out with "rake routes"
 

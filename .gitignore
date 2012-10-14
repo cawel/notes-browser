@@ -15,4 +15,4 @@
 /tmp
 
 # Ignore user-specific files
-/public/browser
+/app/views/notes
