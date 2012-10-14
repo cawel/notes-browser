@@ -7,6 +7,7 @@ gem "haml-rails"
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'rdiscount'
 
 
 # Gems used only for assets and not required
