@@ -14,5 +14,5 @@
 /log/*.log
 /tmp
 
-# Ignore user-specific files
-/app/views/notes
+# Ignore notes dir (where the notes files reside)
+/notes
