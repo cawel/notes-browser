@@ -1,6 +1,6 @@
 # The Black Death
 
-## roads were conveyers for:
+## Roads were conveyers for:
 * priests
 * merchants
 * conquering armies and cavalries
@@ -16,10 +16,11 @@
 * carried by rats on boats
 
 ## Devastating for populations
-* China pop = 120 million by 1320s to 80 million within a generation
+* China pop = 120 million by 1320s
+* decreased to 80 million within a generation
 * Europe lost 60% of its population
 
-## most effective regions for spreading
+## Most effective regions for spreading
 * trading ports
 * posts
 * caravan cities
@@ -33,11 +34,10 @@
 * 14th century = period of turmoil, death
 * destruction was a clean slate for a whole new political system, heralding a new phase in world history
 
-## worlds apart
+## Worlds apart
 * not all parts of the world was equally affected
 * no contact = no borrowing
-* The Americas was completely unaffected
-* Americas = a world apart
+* the Americas was completely unaffected (Americas = a world apart)
 * parts of inland Africa was unaffected
 
 ## North Africa and East Africa
@@ -52,8 +52,8 @@
 * integration of coastal regions into the broader trading network
 * including beginning shipment of slaves out of Africa for sale
 * 1150: we have evidence that African slaves working for Arabs in the port of Canton
-* ppl amalgamated inherited traditions with new practices that they encounter by sharing communities with other people
+* being amalgamated, people inherited traditions with new practices that they encountered by sharing communities with other people
 
 ## what to remember
-* not just commodities that were exchanged
+* not just commodities that were exchanged, but also diseases
 * the interconnectedness also had unintended consequences (e.g. plague)

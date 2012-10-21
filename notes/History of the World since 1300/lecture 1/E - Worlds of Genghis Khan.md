@@ -1,7 +1,7 @@
 # Worlds of Genghis Khan
 
-## intro
-* example of political power was transformed by these commercial networks
+## Intro
+* example of political power transformed by these commercial networks
 * much of Eurasia was populated by nomads, hunters, predators
 * Mongols: survival for them relied on predation
 * interactions and divisions of Afro-Eurasia will intensify after the 13th century
@@ -17,27 +17,27 @@
 * relying on tribute
 * relying on plunder (appropriating the wealth produced by others and redistributing it)
 * equestrian culture
-* skulls on their saddles, element of surprise, use of fear
+* characteristics: skulls on their saddles, element of surprise, use of fear
 
-# Mongols interactions with conquered people
+## Mongols interactions with conquered people
 * armies travel light
 * had to live off the cities they conquered
-* not the destruction of the people because they needed them
+* not into the destruction of the people because they needed them
 * to insure the sustainability of their transfers of wealth to the Mongol power holders
-* example of cycle of economic dependency
+* an example of cycle of economic dependency
 * they needed alliances through weddings and diplomacy
 * caravans continued to ply their traffic (important to sustain the Mongol Empire)
 
-# Integrations
+## Integrations
 * when the Mongols went to conquests, they followed the routes of the Silk Road
 * the Mongols tried to integrate into it
 * political structure integration, e.g.
-** German miners being transported to China
-** Chinese doctors transported to Persia
-** carpets everywhere
-** lemons and carrots were exchanged from Persia to China
-** noodles and playing cards were introduced to Europe
+    * German miners being transported to China
+    * Chinese doctors transported to Persia
+    * carpets everywhere
+    * lemons and carrots were exchanged from Persia to China
+    * noodles and playing cards were introduced to Europe
 
 ## what to remember
 * political model of integration was coupled to the economic process of integration
-* give rise to the idea of relationship between empire and global history
+* the idea of the relationship between empire and global history
