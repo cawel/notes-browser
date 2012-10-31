@@ -42,7 +42,7 @@
 * deforestation of Southern China, as the agrarian frontier moves ever southwards, destruction of habitats that sustained macro-fauna, like elephants (implicit war between farmers and elephants)
 
 ## Agrarian expansion important to global history
-1 cycle between the creating of wealth and possibility of constructing and centralizing power 
-    * which created resources that states could harness)
-    * negotiation between those who are able to skim the surpluses of agrarian societies (e.g. merchants and tax collectors)
-2 trade between countryside and cities grew connections, and created an interdependence
+1. cycle between the creating of wealth and possibility of constructing and centralizing power 
+  * which created resources that states could harness)
+  * negotiation between those who are able to skim the surpluses of agrarian societies (e.g. merchants and tax collectors)
+2. trade between countryside and cities grew connections, and created an interdependence
