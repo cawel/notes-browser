@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
     path = params[:level1]
     path += "/#{params[:level2]}" if params[:level2]
     path += "/#{params[:level3]}" if params[:level3]
+    path += "/#{params[:level4]}" if params[:level4]
     @files = file_list(path)
 
     if @files.count == 1 && File.file?(@files[0])
