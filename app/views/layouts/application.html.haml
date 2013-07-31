@@ -14,4 +14,7 @@
         %ul{:class => "nav nav-pills"}
           %li
             = link_to "browse", browser_url("root")
+          %li
+            - if @directory.blank? && params[:path].present?
+              = link_to "edit", edit_page_path(path: params[:path])
       = yield

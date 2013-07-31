@@ -7,22 +7,23 @@ class ApplicationController < ActionController::Base
   end
 
   def browse
-    path = params[:level1]
-    path += "/#{params[:level2]}" if params[:level2]
-    path += "/#{params[:level3]}" if params[:level3]
-    path += "/#{params[:level4]}" if params[:level4]
-    @files = file_list(path)
+    @files = file_list(path_filename)
 
     if @files.count == 1 && File.file?(@files[0])
       render @files[0]
     end
+    @directory = params[:path]
   end
 
 
   private
 
+  def path_filename
+    'notes/' + (params[:path] || "")
+  end
+
   def file_list dir
-    path = "notes/" + (dir || "")
+    path = dir || ""
     if File.directory? path
       entries = Dir.entries(path)
       entries.reject!{|f| f =~ /^\./}
@@ -43,7 +44,7 @@ class ApplicationController < ActionController::Base
   end
 
   def deal_with_root
-    params[:level1] = nil if params[:level1] == 'root'
+    params[:path] = nil if params[:path] == 'root'
   end
 
 end
