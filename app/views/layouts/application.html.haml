@@ -8,13 +8,22 @@
     = csrf_meta_tags 
   %body
     .container
-      .header
-        %h1
-          Notes Viewer
-        %ul{:class => "nav nav-pills"}
-          %li
-            = link_to "browse", browser_url("root")
-          %li
+      .navbar
+        .navbar-inner
+          %ul.nav.navbar-nav
+            %li
+              = link_to "root", browser_url("root")
             - if @directory.blank? && params[:path].present?
-              = link_to "edit", edit_page_path(path: params[:path])
-      = yield
+              %li
+                = link_to "edit", edit_page_path(path: params[:path])
+    .container
+      %h2
+        Directory:
+        = params[:level1] || "root"
+    .container
+      .main_content
+        = yield
+    .container
+      .footer
+        %p.muted.text-center
+          \- Notes Viewer 2013 -
