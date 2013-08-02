@@ -8,20 +8,29 @@
     = csrf_meta_tags 
   %body
     .container
-      .navbar
-        .navbar-inner
-          %ul.nav.navbar-nav
-            %li
-              = link_to "root", browser_url("root")
-            - if @directory.blank? && params[:path].present?
-              %li
-                = link_to "edit", edit_page_path(path: params[:path])
+      %ul.breadcrumb
+        %li
+          = link_to "root", browser_url("root")
+          - if params[:path]
+            %span= '/'
+        - if params[:path]
+          - segments = params[:path].split('/')
+          - segments.inject('') do |memo, segment|
+            %li 
+              - if segment == segments[-1]
+                = segment
+              - else
+                = link_to segment, breadcrumb_link(memo, segment)
+                %span= '/'
+            - if memo.blank?
+              - segment
+            - else
+              - memo + '/' + segment
+        - if @directory.blank? && params[:path].present?
+          %li
+            = link_to "edit", edit_page_path(path: params[:path])
     .container
-      %h2
-        Directory:
-        = params[:level1] || "root"
-    .container
-      .main_content
+      .main_content.well
         = yield
     .container
       .footer
