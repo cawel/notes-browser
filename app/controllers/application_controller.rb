@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
+  NOTES_DIR = 'public/notes/'
+
   def welcome
   end
 
@@ -19,7 +21,7 @@ class ApplicationController < ActionController::Base
   private
 
   def path_filename
-    'notes/' + (params[:path] || "")
+    NOTES_DIR + (params[:path] || "")
   end
 
   def file_list dir

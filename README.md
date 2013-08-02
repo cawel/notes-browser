@@ -9,7 +9,7 @@ The latest version of this app (so that you get the idea) is live at: http://not
 
 ## How to use it
 
-1. Dump your notes files in a "notes/" directory in the root directory of this project. 
+1. Dump your notes files in the "public/notes/" directory of this project. 
 2. Install with:
 ``` 
 bundle install
