@@ -1,3 +1,9 @@
+- if @files.empty?
+  %p
+    Oops. No markdown files in your 
+    %code
+      notes/
+    folder.
 %ul
   - @files.each do |file|
     %li
