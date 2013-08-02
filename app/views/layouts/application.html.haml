@@ -7,29 +7,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags 
   %body
-    .container
-      %ul.breadcrumb
-        %li
-          = link_to root_url do
-            %i.icon-home>
-          - if params[:path]
-            %span.muted= '>'
-        - if params[:path]
-          - segments = params[:path].split('/')
-          - segments.inject('') do |memo, segment|
-            %li 
-              - if segment == segments[-1]
-                %span.muted= segment
-              - else
-                = link_to segment, breadcrumb_link(memo, segment)
-                %span.muted= '>'
-            - if memo.blank?
-              - segment
-            - else
-              - memo + '/' + segment
-        - if @directory.blank? && params[:path].present?
-          = link_to edit_page_path(path: params[:path]), class: 'pull-right' do
-            %i.icon-edit
+    = render 'layouts/breadcrumb'
     .container
       .main_content.well
         = yield
