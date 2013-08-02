@@ -10,7 +10,8 @@
     .container
       %ul.breadcrumb
         %li
-          = link_to "root", browser_url("root")
+          = link_to browser_url("root") do
+            %i.icon-home
           - if params[:path]
             %span= '/'
         - if params[:path]
