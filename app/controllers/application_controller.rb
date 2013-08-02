@@ -1,12 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_filter :deal_with_root
 
   protect_from_forgery
 
   NOTES_DIR = 'public/notes/'
-
-  def welcome
-  end
 
   def browse
     @files = file_list(path_filename)
@@ -43,10 +39,6 @@ class ApplicationController < ActionController::Base
         e =~ /.*\.md$/
       end
     end
-  end
-
-  def deal_with_root
-    params[:path] = nil if params[:path] == 'root'
   end
 
 end
