@@ -1,3 +1,4 @@
+$baseLineHeight: 22px;
 @import "bootstrap";
 
 html {
@@ -6,11 +7,27 @@ html {
 
 body{
   background: transparent;
+  font-family: 'Helvetica Neue';
 }
 
 .main_content {
   background-color: white;
   padding: 20px;
+}
+
+h1{
+  font-size: 24px;
+}
+h2{
+  font-size: 18px;
+}
+
+ul li{
+  list-style: square outside;
+}
+
+ul ul li, ol ul li {
+  list-style-type: circle;
 }
 
 .footer{
