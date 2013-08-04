@@ -4,7 +4,7 @@
       = link_to root_url do
         %i.icon-home>
       - if params[:path]
-        %span.muted= '>'
+        %span.muted= '/'
     - if params[:path]
       - segments = params[:path].split('/')
       - segments.inject('') do |memo, segment|
@@ -13,7 +13,7 @@
             %span.muted= segment
           - else
             = link_to segment, breadcrumb_link(memo, segment)
-            %span.muted= '>'
+            %span.muted= '/'
         - if memo.blank?
           - segment
         - else
