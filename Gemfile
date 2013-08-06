@@ -4,9 +4,11 @@ ruby "2.0.0"
 gem 'rails', '3.2.14'
 gem "haml-rails"
 gem 'bootstrap-sass'
+gem 'jquery-rails'
 
 gem 'simple_form'
 gem 'rdiscount'
+gem 'dropbox-sdk'
 
 
 # Gems used only for assets and not required
@@ -21,4 +23,3 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
