@@ -5,12 +5,12 @@ class ApplicationController < ActionController::Base
   NOTES_DIR = 'public/notes/'
 
   def browse
-    @files = file_list(path_filename)
-
-    if @files.count == 1 && File.file?(@files[0])
-      render @files[0]
-    end
     @directory = params[:path]
+    @file_list = file_list(path_filename)
+
+    if @file_list.count == 1 && File.file?(@file_list[0])
+      render @file_list[0]
+    end
   end
 
 

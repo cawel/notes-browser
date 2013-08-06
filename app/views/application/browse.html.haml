@@ -1,11 +1,11 @@
-- if @files.empty?
+- if @file_list.empty?
   %p
     Oops. No markdown files in your 
     %code
       notes/
     folder.
 %ul
-  - @files.each do |file|
+  - @file_list.each do |file_name|
     %li
-      = link_to file, file_link(file)
+      = link_to file_name, file_link(file_name)
 
