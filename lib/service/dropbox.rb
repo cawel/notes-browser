@@ -4,7 +4,7 @@ class Service::Dropbox < Service::FileService
   attr_accessor :filename_list
 
   def initialize path
-    self.path = path
+    self.path = path || '/'
     fetch_file
   end
 
