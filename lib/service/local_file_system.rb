@@ -31,11 +31,12 @@ class Service::LocalFileSystem < Service::FileService
     MIME::Types.type_for(path).first.try :content_type
   end
 
-  private
-
   def path_filename
     NOTES_DIR + (@path || "")
   end
+
+
+  private
 
   def list dir
     path = dir || ""
