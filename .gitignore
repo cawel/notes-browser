@@ -15,6 +15,7 @@
 /tmp
 .DS_store
 *.swp
+/config/dropbox_env_variables.rb
 
 # Ignore notes dir (where the notes files reside)
 /notes
