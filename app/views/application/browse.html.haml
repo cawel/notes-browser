@@ -1,8 +1,7 @@
 - if @filename_list.empty?
   %p
     Oops. No markdown files in your 
-    %code
-      notes/
+    %code= params[:path]
     folder.
 %ul
   - @filename_list.each do |file_name|
