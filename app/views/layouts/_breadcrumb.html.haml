@@ -18,6 +18,6 @@
           - segment
         - else
           - memo + '/' + segment
-    - if @directory.blank? && params[:path].present?
+    - if @directory.blank? && params[:path].present? && request.local?
       = link_to edit_page_path(path: params[:path]), class: 'pull-right' do
         %i.icon-edit
