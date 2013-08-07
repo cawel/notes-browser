@@ -1,7 +1,5 @@
-class LocalFileSystem < FileService
+class Service::LocalFileSystem < Service::FileService
   NOTES_DIR = 'public/notes/'
-
-  attr_accessor :path
 
   def initialize path
     self.path = path
