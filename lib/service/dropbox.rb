@@ -21,7 +21,7 @@ class Service::Dropbox < Service::FileService
   end
 
   def text_file?
-    mime_type == "application/octet-stream"
+    ['text/plain', "application/octet-stream"].include? mime_type
   end
 
   def mime_type
