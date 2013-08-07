@@ -1,20 +1,34 @@
+require "mime/types"
 class Service::LocalFileSystem < Service::FileService
   NOTES_DIR = 'public/notes/'
 
   def initialize path
     self.path = path
-  end
+    @filename_list = list path_filename
 
-  def file_list
-    @file_list = list path_filename
+    text_plain = MIME::Types['text/plain'].first.to_hash
+    text_plain['Extensions'].push('md')
+    MIME::Types.add(MIME::Type.from_hash(text_plain))
   end
 
   def file
-    @file_list[0]
+    File.read( @filename_list[0] )
   end
 
-  def renderable?
-    @file_list.count == 1 && File.file?(@file_list[0])
+  def directory?
+    !( @filename_list.count == 1 && File.file?(@filename_list[0]) )
+  end
+
+  def text_file?
+    if mime_type.present?
+      ['text/plain'].include? mime_type
+    else
+      false
+    end
+  end
+
+  def mime_type
+    MIME::Types.type_for(path).first.try :content_type
   end
 
   private
@@ -28,7 +42,7 @@ class Service::LocalFileSystem < Service::FileService
     if File.directory? path
       entries = Dir.entries(path)
       entries.reject!{|f| f =~ /^\./}
-      filter_markdown_files(path, entries)
+      # filter_markdown_files(path, entries)
     else
       [ path ]
     end

@@ -1,7 +1,6 @@
 require 'dropbox_sdk'
 
 class Service::Dropbox < Service::FileService
-  attr_accessor :filename_list
 
   def initialize path
     self.path = path || '/'
