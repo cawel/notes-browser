@@ -2,42 +2,14 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  NOTES_DIR = 'public/notes/'
-
   def browse
-    @directory = params[:path]
-    @file_list = file_list(path_filename)
+    file_service = FileService.get_file_service(params[:path])
+    @file_list = file_service.file_list
 
-    if @file_list.count == 1 && File.file?(@file_list[0])
-      render @file_list[0]
-    end
-  end
-
-
-  private
-
-  def path_filename
-    NOTES_DIR + (params[:path] || "")
-  end
-
-  def file_list dir
-    path = dir || ""
-    if File.directory? path
-      entries = Dir.entries(path)
-      entries.reject!{|f| f =~ /^\./}
-      filter_markdown_files(path, entries)
+    if file_service.renderable? 
+      render file_service.file
     else
-      [ path ]
-    end
-  end
-
-  def filter_markdown_files path, entries
-    entries.select do |e|
-      if File.directory?(path + "/" + e)
-        true
-      else
-        e =~ /.*\.md$/
-      end
+      @directory = params[:path]
     end
   end
 
