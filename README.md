@@ -2,9 +2,9 @@
 
 ## Introduction
 
-I usually take notes in plain text files using the [Markdown](http://daringfireball.net/projects/markdown/) syntax. I wanted to read them in a HTML browser – hence leveraging CSS styling – so I created this simple browse tool.
+I usually take notes in plain text files using the [Markdown](http://daringfireball.net/projects/markdown/) syntax. And I wanted to consult (both browse and read) them in a regular HTML browser – leveraging CSS styling – so I created this simple web app to do just that.
 
-The latest version of this app (so that you get the idea) [is live on heroku](http://notes-browser.herokuapp.com/).
+The latest version of this app (so that you get the idea) is [live on heroku](http://notes-browser.herokuapp.com/).
 
 
 ## How to use it
@@ -49,8 +49,8 @@ rails server
 5. Browse your notes through the web at http://localhost:3000
 
 
-## Dependencies versions
+## Dependencies
 
 As specified in the Gemfile:
-* ruby 2.0
+* ruby v2.0
 * Rails v3.2.14
