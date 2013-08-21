@@ -14,19 +14,23 @@ There are 2 ways you can source your notes files to the app. The configuration (
 ### Local File System
 
 1. Dump your notes files in the "public/notes/" directory of this project. Alternatively you can symlink "public/notes/" to your own notes files folder.
+
 2. Install the app with:
 ``` 
 bundle install
 ``` 
+
 3. Start Rails server with:
 ``` 
 rails server
 ``` 
+
 4. Browse your notes through the web at http://localhost:3000
 
 ### Dropbox
 
 1. Create a Dropbox App (in order to create a dropbox folder in which you can toss your notes files in)
+
 2. Define 3 env vars in your shell (or on heroku):
 ```
 export DROPBOX_APP_KEY='your-app-key'
