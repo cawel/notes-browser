@@ -13,8 +13,8 @@ class Service::Dropbox < Service::FileService
     @metadata = @client.metadata(path)
     if @metadata['is_dir']
       contents = @client.metadata(path)['contents']
-      file_names = contents.map{|h| h['path']}.map{|path| filename_from(path) }
-      @filename_list = file_names
+      @files_list = contents.select{|h| h['is_dir'] == false}.map{|h| h['path']}.map{|path| filename_from(path) }
+      @folders_list = contents.select{|h| h['is_dir'] == true}.map{|h| h['path']}.map{|path| filename_from(path) }
     else
       @filename_list = [path]
     end

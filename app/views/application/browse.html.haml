@@ -1,10 +1,21 @@
-- if @filename_list.empty?
+- if @files_list.empty? && @folders_list.empty?
   %p
     Oops. No markdown files in your 
     %code= params[:path]
     folder.
-%ul
-  - @filename_list.each do |file_name|
-    %li
-      = link_to file_name, file_link(file_name)
+
+- else
+  - if @folders_list.any?
+    %ul
+      - @folders_list.each do |folder_name|
+        %li
+          = link_to folder_name, file_link(folder_name)
+          %span.muted= "/"
+
+  - if @files_list.any?
+    %hr
+    %ul
+      - @files_list.each do |file_name|
+        %li
+          = link_to file_name, file_link(file_name)
 

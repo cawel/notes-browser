@@ -3,8 +3,8 @@ class Service::LocalFileSystem < Service::FileService
   NOTES_DIR = 'public/notes/'
 
   def initialize path
-    self.path = path
-    @filename_list = list path_filename
+    @path = path
+    @files_list = list path_filename
 
     text_plain = MIME::Types['text/plain'].first.to_hash
     text_plain['Extensions'].push('md')
@@ -12,11 +12,11 @@ class Service::LocalFileSystem < Service::FileService
   end
 
   def file
-    File.read( @filename_list[0] )
+    File.read( @files_list[0] )
   end
 
   def directory?
-    !( @filename_list.count == 1 && File.file?(@filename_list[0]) )
+    @is_directory
   end
 
   def text_file?
@@ -39,14 +39,21 @@ class Service::LocalFileSystem < Service::FileService
   private
 
   def list dir
+    @folders_list = []
     path = dir || ""
     if File.directory? path
-      entries = Dir.entries(path)
-      entries.reject!{|f| f =~ /^\./}
-      # filter_markdown_files(path, entries)
+      @is_directory = true
+      @folders_list = Dir.entries(path).select {|entry| File.directory?(File.join(path, entry)) && !hidden_file?(entry) }
+      Dir.entries(path).reject {|entry| File.directory?(File.join(path, entry)) || hidden_file?(entry) }
     else
+      @is_directory = false
       [ path ]
     end
+  end
+
+  def hidden_file? filename
+    # starting with a '.'
+    filename =~ /^[\.].*/
   end
 
   def filter_markdown_files path, entries
