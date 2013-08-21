@@ -34,8 +34,8 @@ rails server
 2. Define 3 env vars in your shell (or on heroku):
 ```
 export DROPBOX_APP_KEY='your-app-key'
-export DROPBOX_APP_SECRET='app-key'
-export DROPBOX_ACCESS_TOKEN='access-token'
+export DROPBOX_APP_SECRET='your-app-secret'
+export DROPBOX_ACCESS_TOKEN='your-access-token'
 ```
 
 3. Install the app with:
