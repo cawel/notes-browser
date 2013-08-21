@@ -4,7 +4,7 @@
 
 I usually take notes in text files using the Markdown syntax. I wanted to read them in a HTML browser – benefitting from presentation CSS – so I created this simple tool to browse and display my note files. 
 
-The latest version of this app (so that you get the idea) ![is live on heroku](http://notes-browser.herokuapp.com/).
+The latest version of this app (so that you get the idea) [is live on heroku](http://notes-browser.herokuapp.com/).
 
 
 ## How to use it
