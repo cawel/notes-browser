@@ -3,12 +3,16 @@ ruby "2.0.0"
 
 gem 'rails', '3.2.14'
 gem "haml-rails"
-gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'simple_form'
 gem 'rdiscount'
 gem 'dropbox-sdk'
+
+gem 'bootstrap-sass'
+
+# adds browser vendor prefixes 
+gem 'autoprefixer-rails'
 
 
 # Gems used only for assets and not required
