@@ -3,8 +3,9 @@
 
 // removes gutter on phones and tablets
 // any width smaller than 991px would not work on my iPod Touch
-// it is as if the iPod Touch's resolution would be 991px
+// it is as if the iPod Touch's resolution would be 991px (Bootstrap's "screen-sm")
 // whereas it is supposed to be 320px
+// as can be tested with http://www.websitedimensions.com/pixel
 @media (max-width: 991px) {
   .container {
     padding-right: 0;
