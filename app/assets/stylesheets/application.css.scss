@@ -2,11 +2,25 @@
 @import "bootstrap";
 
 // removes gutter on phones and tablets
+// any width smaller than 991px would not work on my iPod Touch
+// it is as if the iPod Touch's resolution would be 991px
+// whereas it is supposed to be 320px
 @media (max-width: 991px) {
-  body {
+  .container {
     padding-right: 0;
     padding-left: 0;
-  font-size: 3em;
+    width: 100%;
+  }
+  body {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 767px;
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
