@@ -2,16 +2,11 @@
 @import "bootstrap";
 
 // removes gutter on phones and tablets
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   body {
     padding-right: 0;
     padding-left: 0;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 767px;
+  font-size: 3em;
   }
 }
 
