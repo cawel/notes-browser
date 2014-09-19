@@ -1,10 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-html {
-  background:url(bg.png) repeat top center;
-}
-
 body{
   background: transparent;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -14,11 +10,15 @@ body{
 .main_content {
   background-color: white;
   padding: 20px;
+  ul, ol {
+    padding-left: 19px;
+  }
   img {
     box-shadow: 0px 0px 5px #aaa;
     padding: 2px;
     margin-top: 10px;
     margin-bottom: 10px;
+    max-width: 100%;
   }
 }
 
@@ -54,4 +54,33 @@ textarea {
 
 .footer{
   font-size: 85%;
+}
+
+@media only screen and (max-width : 767px) {
+  .breadcrumb {
+    background-color: transparent;
+    padding: 5px 0;
+    margin-bottom: 0;
+    > li + li:before {
+      content: "/";
+      padding: 0;
+    }
+  }
+  .main_content {
+    padding: 0;
+  }
+  .breadcrumb-container {
+    margin-bottom: 30px;
+    background-color: #f0f0f0;
+  }
+}
+
+@media only screen and (min-width : 768px) {
+  html {
+    background:url(bg.png) repeat top center;
+  }
+  .main_content {
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  }
 }
