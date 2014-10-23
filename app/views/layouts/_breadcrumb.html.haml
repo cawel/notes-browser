@@ -8,7 +8,7 @@
       - segments.inject('') do |memo, segment|
         %li 
           - if segment == segments[-1]
-            %span.muted= segment
+            %span.text-muted= segment
           - else
             = link_to segment, breadcrumb_link(memo, segment)
         - if memo.blank?
