@@ -48,7 +48,8 @@ h3{
 }
 
 ul li{
-  list-style: square outside;
+  list-style: circle outside;
+  list-style-type: disc;
 }
 
 ul ul li, ol ul li {
