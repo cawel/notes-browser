@@ -52,7 +52,11 @@ ul li{
   list-style-type: disc;
 }
 
-ul ul li, ol ul li {
+ul li ol li{
+  list-style-type: decimal;
+}
+
+ul ul li {
   list-style-type: circle;
 }
 
