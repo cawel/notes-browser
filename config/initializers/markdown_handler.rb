@@ -1,5 +1,3 @@
-require 'rdiscount'
-
 module MarkdownHandler
 
   def self.erb
@@ -21,8 +19,9 @@ module MarkdownHandler
       # fail silently since this is a fragile hack
     end
 
-    output = "RDiscount.new(begin;#{compiled_source};end).to_html"
+    "RDiscount.new(begin;#{compiled_source};end).to_html"
+    ''
   end
 end
 
-ActionView::Template.register_template_handler :md, MarkdownHandler
+# ActionView::Template.register_template_handler :md, MarkdownHandler

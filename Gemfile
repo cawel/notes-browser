@@ -4,12 +4,15 @@ ruby "2.2.3"
 gem 'rails', '3.2.14'
 gem "haml-rails"
 gem 'jquery-rails'
+gem 'bootstrap-sass'
 
 gem 'simple_form'
-gem 'rdiscount'
 gem 'dropbox-sdk'
 
-gem 'bootstrap-sass'
+# Require Github markup gem for text to html converters
+gem 'github-markup'
+gem 'github-markdown'
+
 
 # adds browser vendor prefixes 
 gem 'autoprefixer-rails'
