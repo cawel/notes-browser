@@ -1,43 +1,58 @@
-require 'dropbox_sdk'
-
 class Service::Dropbox < Service::FileService
-
-  def initialize path
-    self.path = path || '/'
+  def initialize(path)
+    self.path = path.present? ? ('/' + path) : ''
     fetch_file
   end
 
   def fetch_file
-    flow = DropboxOAuth2FlowNoRedirect.new(ENV['DROPBOX_APP_KEY'], ENV['DROPBOX_APP_SECRET'])
-    @client = DropboxClient.new(ENV['DROPBOX_ACCESS_TOKEN'])
-    @metadata = @client.metadata(path)
-    if @metadata['is_dir']
-      contents = @client.metadata(path)['contents']
-      @files_list = contents.select{|h| h['is_dir'] == false}.map{|h| h['path']}.map{|path| filename_from(path) }
-      @folders_list = contents.select{|h| h['is_dir'] == true}.map{|h| h['path']}.map{|path| filename_from(path) }
-    else
-      @filename_list = [path]
-    end
+    @client = DropboxApi::Client.new
+    @metadata = @client.get_metadata(path) if path.present?
+    @directory_listing = @client.list_folder(path) if directory?
+  end
+
+  def files_list
+    files.map(&:name)
+  end
+
+  def folders_list
+    folders.map(&:name)
   end
 
   def text_file?
-    ['text/plain', "application/octet-stream"].include? mime_type
+    %w(md txt).include? file_extension
   end
 
-  def mime_type
-    @metadata['mime_type']
+  def file_extension
+    @metadata.path_lower.match(/\.(.*)$/) ? Regexp.last_match(1) : ''
   end
 
   def file
-    contents, metadata = @client.get_file_and_metadata(path)
-    contents
+    file_contents = ''
+    @client.download(@metadata.path_lower) do |chunk|
+      file_contents << chunk
+    end
+    file_contents
   end
 
   def directory?
-    @metadata['is_dir']
+    root_directory? || @metadata.is_a?(DropboxApi::Metadata::Folder)
   end
 
-  def filename_from path
-    path.match( /[^\/]*$/ )[0]
+  #
+  # Private methods
+  #
+
+  private
+
+  def root_directory?
+    path == ''
+  end
+
+  def folders
+    @directory_listing.entries.select { |e| e.is_a? DropboxApi::Metadata::Folder }
+  end
+
+  def files
+    @directory_listing.entries.select { |e| e.is_a? DropboxApi::Metadata::File }
   end
 end

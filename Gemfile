@@ -5,9 +5,10 @@ gem 'rails', '3.2.14'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'pry-rails', group: :development
 
 gem 'simple_form'
-gem 'dropbox-sdk'
+gem 'dropbox_api'
 
 # Require Github markup gem for text to html converters
 gem 'github-markup'
