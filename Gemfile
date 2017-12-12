@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.2.3"
 
-gem 'rails', '3.2.14'
+gem 'rails', '3.2.16'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'bootstrap-sass'
