@@ -100,7 +100,7 @@ table th, table td{
 // iPad in portrait mode and larger
 @media only screen and (min-width : 768px) {
   html {
-    background:url(bg.png) repeat top center;
+    background: image-url('bg.png') repeat top center;
   }
   .main_content {
     border: 1px solid #e3e3e3;
