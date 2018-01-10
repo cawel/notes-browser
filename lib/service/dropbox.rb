@@ -19,7 +19,7 @@ class Service::Dropbox < Service::FileService
   end
 
   def text_file?
-    %w(md txt).include? file_extension
+    file? && (%w(md txt).include? file_extension)
   end
 
   def file_extension
@@ -36,6 +36,10 @@ class Service::Dropbox < Service::FileService
 
   def directory?
     root_directory? || @metadata.is_a?(DropboxApi::Metadata::Folder)
+  end
+
+  def file?
+    @metadata.is_a?(DropboxApi::Metadata::File)
   end
 
   #

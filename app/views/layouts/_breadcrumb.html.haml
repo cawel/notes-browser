@@ -3,6 +3,7 @@
     %li
       = link_to root_url do
         %i.glyphicon.glyphicon-home>
+
     - if params[:path]
       - segments = params[:path].split('/')
       - segments.inject('') do |memo, segment|
@@ -15,6 +16,7 @@
           - segment
         - else
           - memo + '/' + segment
-    - if @directory.blank? && params[:path].present? && request.local?
+
+    - if params[:path].present? && request.local?
       = link_to edit_page_path(path: params[:path]), class: 'pull-right' do
         %i.icon-edit

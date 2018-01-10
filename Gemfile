@@ -8,6 +8,8 @@ gem 'bootstrap-sass'
 # adds browser vendor prefixes 
 gem 'autoprefixer-rails'
 
+gem 'puma'
+
 gem 'pry-rails', group: :development
 
 gem 'simple_form'
