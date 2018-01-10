@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby "2.4.1"
 
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 5.1.4'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'bootstrap-sass'
@@ -9,8 +9,12 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 
 gem 'puma'
+gem 'pg', '~> 0.20'
 
-gem 'pry-rails', group: :development
+group :development do
+  gem 'pry-rails'
+  gem 'listen'
+end
 
 gem 'simple_form'
 gem 'dropbox_api'

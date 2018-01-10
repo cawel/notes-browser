@@ -1,5 +1,4 @@
-require "mime/types"
-class Service::LocalFileSystem < Service::FileService
+class LocalFileSystem < FileService
   NOTES_DIR = 'public/notes/'
 
   def initialize path

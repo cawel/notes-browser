@@ -1,4 +1,4 @@
-class Service::Dropbox < Service::FileService
+class Dropbox < FileService
   def initialize(path)
     self.path = path.present? ? ('/' + path) : ''
     fetch_file
