@@ -15,6 +15,7 @@ group :development do
   gem 'pry-rails'
   gem 'listen'
   gem 'brakeman', require: false
+  gem 'bundler-audit', require: false
 end
 
 gem 'simple_form'
