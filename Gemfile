@@ -14,6 +14,7 @@ gem 'pg', '~> 0.20'
 group :development do
   gem 'pry-rails'
   gem 'listen'
+  gem 'brakeman', require: false
 end
 
 gem 'simple_form'
