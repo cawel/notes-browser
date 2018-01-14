@@ -5,6 +5,7 @@ gem 'rails', '~> 5.1.4'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+
 # adds browser vendor prefixes 
 gem 'autoprefixer-rails'
 
@@ -18,7 +19,6 @@ group :development do
   gem 'bundler-audit', require: false
 end
 
-gem 'simple_form'
 gem 'dropbox_api'
 
 # require Github markup gem for text to html converters
