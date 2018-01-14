@@ -1,4 +1,6 @@
-class Dropbox < FileService
+class Dropbox
+  attr_accessor :path
+
   def initialize(path)
     self.path = path.present? ? ('/' + path) : ''
     fetch_file
@@ -19,11 +21,11 @@ class Dropbox < FileService
   end
 
   def text_file?
-    file? && (%w(md txt).include? file_extension)
+    file? && (%w[md txt].include? file_extension)
   end
 
   def file_extension
-    @metadata.path_lower.match(/\.(.*)$/) ? Regexp.last_match(1) : ''
+    @metadata.path_lower =~ /\.(.*)$/ ? Regexp.last_match(1) : ''
   end
 
   def file

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   require 'github/markup'
 
   def browse
-    file_service = FileService.get_file_service(params[:path])
+    file_service = Dropbox.new(params[:path])
 
     if file_service.directory?
       @files_list = file_service.files_list
