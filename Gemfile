@@ -14,7 +14,6 @@ gem 'pg', '~> 0.20'
 
 group :development do
   gem 'pry-rails'
-  gem 'listen'
   gem 'brakeman', require: false
   gem 'bundler-audit', require: false
 end
